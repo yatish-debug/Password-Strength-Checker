@@ -24,6 +24,8 @@ along with generating a strong password for you if needed.
 ✅ Beginner-friendly, lightweight, and interactive.
 # Clone the repository
 git clone https://github.com/yatish-debug/advancepass.git
+
+
 cd advancepass
 
 # Run directly with Python
