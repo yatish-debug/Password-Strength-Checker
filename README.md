@@ -30,13 +30,13 @@ Now with a **modern Tkinter GUI**:
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/your-username/advancepass.git
-cd advancepass
+git clone https://github.com/yatish-debug/Password-Strength-Checker.git
+cd adv3.8.7.py
 ```
 
 2. Run with Python 3.x:
 ```bash
-python advancepass.py
+python adv3.8.7.py
 ```
 
 > No external libraries required (uses only standard Python & Tkinter).
