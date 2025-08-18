@@ -23,7 +23,7 @@ along with generating a strong password for you if needed.
 ✅ Generates strong passwords with a default length of 12+.
 ✅ Beginner-friendly, lightweight, and interactive.
 # Clone the repository
-git clone https://github.com/your-username/advancepass.git
+git clone https://github.com/yatish-debug/advancepass.git
 cd advancepass
 
 # Run directly with Python
