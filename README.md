@@ -52,9 +52,9 @@ It helps users evaluate password security, generate strong passwords, analyze en
 
 3. Run the script directly (no external dependencies required):
 
-   ```bash
-   python AdvancePass.py
    ```
+   python AdvancePass.py
+   
 
 ---
 
