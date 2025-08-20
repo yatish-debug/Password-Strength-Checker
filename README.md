@@ -54,7 +54,7 @@ It helps users evaluate password security, generate strong passwords, analyze en
 
    ```
    python AdvancePass.py
-   ```
+   ````
 
 ---
 
@@ -65,7 +65,7 @@ When you run the script, you can choose **CLI** or **GUI**:
 ```bash
 Choose mode: (1) CLI  (2) GUI
 > 
-```
+````
 
 ### ▶️ CLI Mode
 
@@ -83,7 +83,7 @@ Estimated Crack Time: 39.05 years
 Save report? (csv/json/skip): csv
 Enter filename (without extension): myreport
 📂 Report saved as myreport.CSV.
-```
+````
 
 Also shows **statistics summary** of all stored results.
 
