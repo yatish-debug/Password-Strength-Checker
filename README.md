@@ -1,117 +1,160 @@
-# 🔐 AdvancePass – Password Strength Evaluator & Generator
+# 🔐 AdvancePass - Password Strength Checker
 
-![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python)
-![Status](https://img.shields.io/badge/Status-Active-success)
-![Security](https://img.shields.io/badge/Type-CLI%20%26%20GUI-orange)
+[![Python](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/)  
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)  
+[![GitHub stars](https://img.shields.io/github/stars/your-username/AdvancePass?style=social)](https://github.com/your-username/AdvancePass/stargazers)  
+[![GitHub forks](https://img.shields.io/github/forks/your-username/AdvancePass?style=social)](https://github.com/your-username/AdvancePass/network/members)  
 
-AdvancePass is a **password strength checker and generator** written in Python.  
-It evaluates password strength (Very Weak → Strong), provides improvement suggestions,  
-and can generate strong passwords instantly.  
-
-Now with a **modern Tkinter GUI**:  
-- 👁️ Show/Hide entered password  
-- 📋 Display generated password separately  
-- 💡 Inline suggestions inside the GUI  
-- 🎨 Clean, styled interface with `ttk`  
+A powerful **Password Strength Checker & Generator** built in pure **Python 3.8.7 (standard library only)**.  
+It helps users evaluate password security, generate strong passwords, analyze entropy, and visualize crack time — all with a **CLI + GUI** interface.
 
 ---
 
-## 📌 Features
-- ✅ CLI Mode – check strength & generate passwords from terminal  
-- ✅ GUI Mode – interactive Tkinter window  
-- ✅ Show/Hide password toggle  
-- ✅ Password suggestions displayed inline  
-- ✅ Generates strong random passwords (12+ chars)  
-- ✅ Beginner-friendly & lightweight  
+## ✨ Features
+
+✅ **Password Strength Analysis**  
+- Length, uppercase, lowercase, digits, special characters check  
+- Entropy (bits), possible combinations, crack time estimation  
+
+✅ **Advanced Security Features**  
+- Dictionary word detection (e.g., `password`, `admin`, `123456`)  
+- **Character balance analysis** (avoid too many digits/uppercase)  
+- **Password reuse detection** (warns if you’ve used it before)  
+
+✅ **Reporting & Logging**  
+- Save detailed reports as **CSV / JSON** (with custom filenames)  
+- All password checks are **logged into SQLite DB**  
+- **Statistics viewer** (distribution of Weak/Medium/Strong passwords)  
+- **Password history viewer** (previously checked passwords)
+
+✅ **User Interfaces**  
+- **CLI Mode** (terminal-based analysis & report generation)  
+- **GUI Mode** with Tkinter:  
+  - Password strength progress bar  
+  - Show/Hide password toggle  
+  - Dark/Light theme toggle 🌗  
+  - Copy password to clipboard  
+  - View history & statistics in popup windows  
+
+✅ **Password Generator**  
+- Generates secure random passwords (12+ characters by default)  
 
 ---
 
-## ⚙️ Installation
+## 📦 Installation
 
-1. Clone the repository:
-```bash
-git clone https://github.com/yatish-debug/Password-Strength-Checker.git
-cd adv3.8.7.py
-```
+1. Make sure you have **Python 3.8.7** (or later 3.x) installed.  
+2. Clone this repository:
+   ```bash
+   git clone https://github.com/your-username/AdvancePass.git
+   cd AdvancePass
+````
 
-2. Run with Python 3.x:
-```bash
-python adv3.8.7.py
-```
+3. Run the script directly (no external dependencies required):
 
-> No external libraries required (uses only standard Python & Tkinter).
+   ```bash
+   python AdvancePass.py
+   ```
 
 ---
 
-## ▶️ Usage
+## 🚀 Usage
 
-When you run the script, you’ll be asked to choose a mode:
+When you run the script, you can choose **CLI** or **GUI**:
 
 ```bash
 Choose mode: (1) CLI  (2) GUI
+> 
 ```
 
----
+### ▶️ CLI Mode
 
-### 1️⃣ CLI Example
-```
-Enter your password to check: hello123
+```bash
+Enter your password to check: myPass123!
+Password Strength: Medium
+Entropy: 59.65 bits
+Possible Combinations: 1.23e+18
+Estimated Crack Time: 39.05 years
 
-Password Strength: Weak
 ⚠️ Suggestions to improve your password:
-  - Add at least one uppercase letter.
-  - Add at least one special character (!@#$%^&*()-_+=).
+  - Add at least one special character (!@#$%^&*()-_+=)
 
-💡 Suggested Strong Password: G@7dFs#9X!Lp
+💡 Suggested Strong Password: K!d82@FxWqeY
+Save report? (csv/json/skip): csv
+Enter filename (without extension): myreport
+📂 Report saved as myreport.CSV.
+```
+
+Also shows **statistics summary** of all stored results.
+
+---
+
+### 🖥️ GUI Mode
+
+* Enter a password and click **Check Password**
+* See strength, entropy, crack time & suggestions instantly
+* Buttons for:
+
+  * Generate strong password
+  * Copy password
+  * Save report (CSV/JSON with custom name)
+  * View history of all tested passwords
+  * View statistics summary
+  * Toggle between **Light/Dark theme** 🌗
+
+---
+
+## 📸 Demo Screenshots
+
+📌 *Add your actual screenshots in a `screenshots/` folder.*
+
+Example placeholders:
+
+### GUI - Light Mode
+
+![Light Mode Screenshot](screenshots/light_mode.png)
+
+### GUI - Dark Mode
+
+![Dark Mode Screenshot](screenshots/dark_mode.png)
+
+### CLI Mode
+
+![CLI Screenshot](screenshots/cli_mode.png)
+
+---
+
+## 📊 Database (SQLite)
+
+* All password checks are stored in `password_logs.db`
+* Schema:
+
+  ```sql
+  CREATE TABLE logs (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    password TEXT,
+    strength TEXT,
+    entropy REAL,
+    crack_time TEXT,
+    timestamp TEXT
+  );
+  ```
+
+---
+
+## 🛠️ Project Structure
+
+```
+AdvancePass/
+│
+├── AdvancePass.py        # Main script (CLI + GUI)
+├── password_logs.db      # SQLite database (auto-created)
+├── README.md             # Project documentation
+└── screenshots/          # Place your screenshots here
 ```
 
 ---
 
-### 2️⃣ GUI Example
+## 🤝 Contribution
 
-- Enter a password and press **Check Password** to see strength & suggestions.  
-- Press **Generate Strong Password** to create a secure password.  
-- Use the **👁️ Show/Hide button** to toggle password visibility.  
-- Suggestions appear in a dedicated text box below.  
-
-🖼️ *GUI Preview (sample screenshot placeholder)*  
-```
-+------------------------------------------+
-| 🔐 AdvancePass - Password Checker        |
-|                                          |
-| Enter Password: ********   [👁️ Show]     |
-|                                          |
-| [ Check Password ]  [ Generate Password ]|
-|                                          |
-| Password Strength: Weak                  |
-|                                          |
-| Generated Password: G@7dFs#9X!Lp          |
-|                                          |
-| Suggestions:                             |
-| - Add at least one uppercase letter.     |
-| - Add at least one special character.    |
-+------------------------------------------+
-```
-
-
-## 📂 Project Structure
-```
-advancepass.py   # Main script
-README.md        # Documentation
-```
-
-
-
-## 🎯 Future Enhancements
-- [ ] Add password strength bar (color progress bar in GUI)  
-- [ ] Export password reports (CSV/JSON)  
-- [ ] Advanced checks (dictionary words, breached password API)  
-
-
-
-## 👨‍💻 Author
-👨‍💻 **Author**:  
-Name: Yatish Bharambe  
-Role: Cybersecurity Enthusiast | Python Developer  
-
-⭐ If you find this project useful, please give it a **star** on GitHub!
+Contributions are welcome! Feel free to fork this repo, improve features, or open issues.
