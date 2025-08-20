@@ -46,7 +46,7 @@ It helps users evaluate password security, generate strong passwords, analyze en
 1. Make sure you have **Python 3.8.7** (or later 3.x) installed.  
 2. Clone this repository:
    ```bash
-   git clone https://github.com/your-username/AdvancePass.git
+   git clone https://github.com/yatish-debug/Password-Strength-Checker.git
    cd AdvancePass
 ````
 
@@ -104,9 +104,6 @@ Also shows **statistics summary** of all stored results.
 
 ---
 
-## 📸 Demo Screenshots
-
-📌 *Add your actual screenshots in a `screenshots/` folder.*
 
 Example placeholders:
 
