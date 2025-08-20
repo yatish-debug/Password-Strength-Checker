@@ -54,7 +54,7 @@ It helps users evaluate password security, generate strong passwords, analyze en
 
    ```
    python AdvancePass.py
-   
+   ```
 
 ---
 
